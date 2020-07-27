@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Artem Agvanian`,
+    description: `Hi! My name is Artem and I am a front-end web developer. This is my personal website. Welcome!`,
+    author: `Artem Agvanian`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -18,17 +18,14 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Artem Agvanian`,
+        short_name: `Artem Agvanian`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#f0f4ef`,
+        theme_color: `#f0f4ef`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-styled-components`,
   ],
-}
+};
