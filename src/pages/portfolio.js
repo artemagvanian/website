@@ -127,7 +127,7 @@ const imageQuery = graphql`
         }
       }
     }
-    networkVisualizer: file(relativePath: { eq: "network-visualizer.jpg" }) {
+    baseElg: file(relativePath: { eq: "base-elg.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1280) {
           ...GatsbyImageSharpFluid
@@ -179,11 +179,11 @@ const PortfolioPage = () => {
           background={data.positivemind}
         />
         <Cell
-          title="network visualizer"
-          description="side project to visualize arc diagrams"
-          link="https://github.com/artemagvanian/network-visualiser"
-          techStack="React + D3"
-          background={data.networkVisualizer}
+          title="base elg"
+          description="web-application for exploring the historical data"
+          link="https://baseelg.netlify.app"
+          techStack="Vue.js + Sanity + Netlify"
+          background={data.baseElg}
         />
       </Container>
       <BackgroundCanvas />
