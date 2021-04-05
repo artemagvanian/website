@@ -152,7 +152,7 @@ const PortfolioPage = () => {
         />
         <Cell
           title="avtoritet"
-          description="website for a car dealer company"
+          description="landing page for a car dealer company"
           link="https://avtoritet.net.ua"
           techStack="React + Sanity + Netlify"
           background={data.avtoritet}
@@ -173,14 +173,14 @@ const PortfolioPage = () => {
         />
         <Cell
           title="positivemind"
-          description="mobile application to spread positivity"
+          description="mobile application for spreading positivity"
           inDevelopment
           techStack="React Native + Expo"
           background={data.positivemind}
         />
         <Cell
           title="base elg"
-          description="web-application for exploring the historical data"
+          description="web-application for exploring historical data"
           link="https://baseelg.netlify.app"
           techStack="Vue.js + Sanity + Netlify"
           background={data.baseElg}
