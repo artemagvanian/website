@@ -103,11 +103,13 @@ const AboutPage = () => {
         <div>
           <section>
             <h2>my skills</h2>
-            <ProgressBar title="HTML5" percentage={80} />
-            <ProgressBar title="CSS3" percentage={80} />
-            <ProgressBar title="JavaScript" percentage={70} />
+            <ProgressBar title="HTML5" percentage={90} />
+            <ProgressBar title="CSS3" percentage={90} />
+            <ProgressBar title="JavaScript" percentage={75} />
             <ProgressBar title="React" percentage={70} />
+            <ProgressBar title="Vue.js" percentage={70} />
             <ProgressBar title="D3" percentage={50} />
+            <ProgressBar title="Git" percentage={50} />
             <ProgressBar title="React Native" percentage={40} />
           </section>
           <section
