@@ -93,7 +93,7 @@ const AboutPage = () => {
           <h2>
             <Accent>Artem Agvanian</Accent>
           </h2>
-          <Text>I am a front-end developer, now based in Norway.</Text>
+          <Text>I am a front-end developer living in Norway.</Text>
           <Text>
             I enjoy creating software that cares about users in the first place.
             I am fond of progressive technologies that allow users to solve
