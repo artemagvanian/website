@@ -33,6 +33,9 @@ const HeaderComponent = ({ siteTitle }) => (
       <NavItem>
         <SiteLink to="/portfolio">portfolio</SiteLink>
       </NavItem>
+      <NavItem>
+        <SiteLink to="/art">art</SiteLink>
+      </NavItem>
     </Nav>
   </Header>
 );
