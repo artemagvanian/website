@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import { graphql, useStaticQuery } from "gatsby";
 
-import Img from "gatsby-image";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -37,7 +37,7 @@ const Container = styled.section`
   }
 `;
 
-const Avatar = styled(Img)`
+const Avatar = styled(GatsbyImage)`
   width: 200px;
   height: 200px;
   border-radius: 100px;
@@ -70,12 +70,10 @@ const Link = styled.a`
 `;
 
 const avatarQuery = graphql`
-  query {
+  {
     avatar: file(relativePath: { eq: "avatar.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 640, maxHeight: 640) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(width: 640, height: 640, layout: CONSTRAINED)
       }
     }
   }
@@ -89,7 +87,7 @@ const AboutPage = () => {
       <SEO title="About" />
       <Container>
         <section>
-          <Avatar fluid={data.avatar.childImageSharp.fluid} />
+          <Avatar image={getImage(data.avatar)} />
           <h2>
             <Accent>Artem Agvanian</Accent>
           </h2>
