@@ -155,6 +155,10 @@ const ArtPage = () => {
     max-width: 750px;
     margin: 0 auto 50px;
   `;
+  const TemplateLink = styled.a`
+    color: #00BFFF;
+    text-decoration: none;
+  `;
 
   const projectInfos = {
     burningMemories: (
@@ -168,6 +172,35 @@ const ArtPage = () => {
         of small dots, later raster-engraved by the laser cutter. After some
         exploration, I produced a larger engraving, which also featured an
         interesting tactile and visual experiences.
+      </TemplateParagraph>
+    ),
+    newsPorridgeForBreakfast: (
+      <TemplateParagraph>
+        I have started noticing that my daily newsletters were becoming more and
+        more full of violent imagery since the spring of 2022. The reason is,
+        obviously, increased coverage of Ukrainian conflict by the media I
+        consume. At the same time, during my summer stay in Finland I have heard
+        a{" "}
+        <TemplateLink
+          href="https://www.youtube.com/watch?v=I-TB4Ma8ihg"
+          target="_blank"
+        >
+          song
+        </TemplateLink>
+        , which could be interpreted in many different ways, but to which I,
+        interestingly enough, could relate (see the{" "}
+        <TemplateLink
+          href="https://lyricstranslate.com/en/-rafaels-angel.html"
+          target="_blank"
+        >
+          lyrics
+        </TemplateLink>{" "}
+        yourself). I decided to depict my morning ritual of news consumption by
+        representing it as something mundane like eating breakfast. While pixel
+        art actively uses colors, the pictures in the bowl are, conversely, much
+        more bland. Final result of this project was printed with two different
+        overlay compositions on a large-format printer, which produced a very
+        different color composition from what I expected.
       </TemplateParagraph>
     ),
   };
@@ -212,7 +245,8 @@ const ArtPage = () => {
         <Cell
           title="news porrdige for breakfast"
           description="photoshop final project"
-          inDevelopment
+          modalText={projectInfos.newsPorridgeForBreakfast}
+          modalGallery={[getImage(data.newsPorridgeForBreakfast)]}
           techStack="adobe photoshop"
           background={getImage(data.newsPorridgeForBreakfast)}
         />
