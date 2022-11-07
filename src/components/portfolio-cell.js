@@ -41,6 +41,7 @@ const Link = styled.a`
   &:hover {
     background-color: #f0f4ef;
     color: #0d1821;
+    cursor: pointer;
   }
 `;
 
@@ -53,19 +54,19 @@ const Description = styled.p`
   line-height: 1.5;
 `;
 
-const ImageGrid = styled.div`
+const MakeImageGrid = (n) => styled.div`
   width: 100%;
   margin: 50px 0;
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(${Math.min(Math.max(1, n), 4)}, 1fr);
 
   @media (max-width: 1200px) {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(${Math.min(Math.max(1, n - 1), 3)}, 1fr);
   }
 
   @media (max-width: 992px) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(${Math.min(Math.max(1, n - 1), 2)}, 1fr);
   }
 `;
 
@@ -90,6 +91,8 @@ const InnerModalContainer = styled.div`
 `;
 
 const Modal = ({ visible, setVisible, modalText, modalGallery }) => {
+  const ImageGrid = MakeImageGrid(modalGallery.length);
+
   if (visible) {
     return (
       <OuterModalContainer>
