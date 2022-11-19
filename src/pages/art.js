@@ -144,6 +144,32 @@ const imageQuery = graphql`
         gatsbyImageData(layout: FULL_WIDTH)
       }
     }
+    stealThisBook: file(relativePath: { eq: "steal-this-book.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(layout: FULL_WIDTH)
+      }
+    }
+    stealThisBookPage1: file(
+      relativePath: { eq: "art/steal-this-book/steal-this-book-1.jpg" }
+    ) {
+      childImageSharp {
+        gatsbyImageData(layout: FULL_WIDTH)
+      }
+    }
+    stealThisBookPage2: file(
+      relativePath: { eq: "art/steal-this-book/steal-this-book-2.jpg" }
+    ) {
+      childImageSharp {
+        gatsbyImageData(layout: FULL_WIDTH)
+      }
+    }
+    stealThisBookPage3: file(
+      relativePath: { eq: "art/steal-this-book/steal-this-book-3.jpg" }
+    ) {
+      childImageSharp {
+        gatsbyImageData(layout: FULL_WIDTH)
+      }
+    }
   }
 `;
 
@@ -156,7 +182,7 @@ const ArtPage = () => {
     margin: 0 auto 50px;
   `;
   const TemplateLink = styled.a`
-    color: #00BFFF;
+    color: #00bfff;
     text-decoration: none;
   `;
 
@@ -201,6 +227,18 @@ const ArtPage = () => {
         more bland. Final result of this project was printed with two different
         overlay compositions on a large-format printer, which produced a very
         different color composition from what I expected.
+      </TemplateParagraph>
+    ),
+    stealThisBook: (
+      <TemplateParagraph>
+        I was inspired by the poem of W.H. Auden, whose collection of short
+        poems was very hard to get in the US. I have attempted to explore
+        different image and text generation opportunities to complement the
+        narrative of Auden, and, possibly, make it more visual and vivid. I have
+        decided to complement each of the stanzas in the poem by a
+        computer-generated picture, responding to the prompt that I derived from
+        each stanza. I further added two computer-generated texts, which serve
+        as epigraphs to the poem.
       </TemplateParagraph>
     ),
   };
@@ -251,11 +289,16 @@ const ArtPage = () => {
           background={getImage(data.newsPorridgeForBreakfast)}
         />
         <Cell
-          title="???"
+          title="steal this book"
           description="indesign final project"
-          inDevelopment
+          modalText={projectInfos.stealThisBook}
+          modalGallery={[
+            getImage(data.stealThisBookPage1),
+            getImage(data.stealThisBookPage2),
+            getImage(data.stealThisBookPage3),
+          ]}
           techStack="adobe indesign"
-          background={getImage(data.inDevelopment)}
+          background={getImage(data.stealThisBook)}
         />
       </Container>
       <BackgroundCanvas />
