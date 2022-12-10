@@ -170,6 +170,20 @@ const imageQuery = graphql`
         gatsbyImageData(layout: FULL_WIDTH)
       }
     }
+    monolithHorizontal: file(relativePath: { eq: "monolith-horizontal.png" }) {
+      childImageSharp {
+        gatsbyImageData(layout: FULL_WIDTH)
+      }
+    }
+    monolithHorizontalPrint: file(
+      relativePath: {
+        eq: "art/monolith-horizontal/monolith-horizontal-print.jpg"
+      }
+    ) {
+      childImageSharp {
+        gatsbyImageData(layout: FULL_WIDTH)
+      }
+    }
   }
 `;
 
@@ -241,17 +255,76 @@ const ArtPage = () => {
         as epigraphs to the poem.
       </TemplateParagraph>
     ),
+    monolithHorizontal: (
+      <>
+        <TemplateParagraph>
+          My inspiration for the final project comes from the largest
+          single-human-made monument park in the world, Vigeland Park, located
+          in the suburbs of Oslo, Norway. I had a chance to visit that place in
+          late 2020, when it was relatively empty because of COVID regulations
+          and very cold weather. I was impressed by the vastness and plainness
+          of the sculptures. The monuments in the park were created to be
+          “timeless” and signify the cycle of life, universal to all human
+          beings.
+        </TemplateParagraph>
+        <TemplateParagraph>
+          At the same time, I am interested in exploring the variety of ways
+          technology disrupted human life, amending and sometimes shattering the
+          seemingly universal ways of living. Hence, the beginning of my thought
+          process was to use glitching to disrupt the pictures of those static
+          monuments, chaotically amending something that seemed to be completely
+          permanent.
+        </TemplateParagraph>
+        <TemplateParagraph>
+          In order to achieve that, I had to extract the raw pixel data from the
+          images first. To make it easier for me, I wrote a{" "}
+          <TemplateLink
+            href="https://github.com/artemagvanian/glitcher-js"
+            target="_blank"
+          >
+            small script
+          </TemplateLink>{" "}
+          that both extracts and recombines raw pixels, allowing for glitching
+          to happen in between.
+        </TemplateParagraph>
+        <TemplateParagraph>
+          As a source image for the glitching process, I chose the picture of
+          the whole monument park rather than some specific statues. The process
+          of glitching consisted of cropping separate statues, glitching them in
+          Audacity, and then pasting them into the original image, cropping the
+          background. The reason I decided to crop statues instead of glitching
+          the image all at once is a more vivid visual effect the former option
+          provides. As for the glitching sequence, after some experimentation I
+          chose the "Fade Out — Hard Overdrive — Normalize" process, which both
+          yielded interesting visuals, did not completely disfigure the statues,
+          and made intuitive sense regarding the issue I wanted to highlight.
+        </TemplateParagraph>
+        <TemplateParagraph>
+          As a final step, I decided to employ a visual metaphor by providing a
+          variant of the image, where the glitched statues are transformed into
+          trees and overall form a forest landscape, suggesting an alternative
+          to the technology-governed world. I did it via the style-transfer
+          neural network, choosing a forest panorama as a source.
+        </TemplateParagraph>
+        <TemplateParagraph>
+          The final manifestation of the work is the large-format printout of
+          the nature-transformed landscape and the glitched image side-by-side,
+          as well as an animated .gif file.
+        </TemplateParagraph>
+      </>
+    ),
   };
   return (
     <Layout>
       <SEO title="Art" />
       <Container>
         <Cell
-          title="???"
-          description="indesign pair exercise"
-          inDevelopment
-          techStack="adobe indesign"
-          background={getImage(data.inDevelopment)}
+          title="monolith horizontal"
+          description="final project"
+          techStack="adobe photoshop + audacity + js"
+          background={getImage(data.monolithHorizontal)}
+          modalText={projectInfos.monolithHorizontal}
+          modalGallery={[getImage(data.monolithHorizontalPrint)]}
         />
         <Cell
           title="revisiting"
