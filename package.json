@@ -1,7 +1,7 @@
 {
   "name": "website",
   "private": true,
-  "description": "My own portfolio website",
+  "description": "personal website.",
   "version": "0.1.0",
   "author": "Artem Agvanian <artemagvanian@icloud.com>",
   "dependencies": {

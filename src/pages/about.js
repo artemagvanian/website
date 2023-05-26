@@ -22,8 +22,6 @@ const Container = styled.section`
   border: 10px solid #384d6b;
   padding: 35px 50px;
   display: grid;
-  grid-gap: 100px;
-  grid-template-columns: repeat(2, 1fr);
 
   @media (max-width: 960px) {
     grid-template-columns: 1fr;
@@ -91,49 +89,37 @@ const AboutPage = () => {
           <h2>
             <Accent>Artem Agvanian</Accent>
           </h2>
-          <Text>I am a front-end developer living in Norway.</Text>
           <Text>
-            I enjoy creating software that cares about users in the first place.
-            I am fond of progressive technologies that allow users to solve
-            their mundane problems in the most intuitive way possible.
+            I am an undergraduate student and researcher at Brown University.
+          </Text>
+          <Text>
+            I enjoy working with computer systems of all sorts, especially those
+            that have interesting privacy and security features.
+          </Text>
+          <Text>
+            For more up-to-date info, visit my LinkedIn or GitHub pages or send
+            me an email.
           </Text>
         </section>
-        <div>
-          <section>
-            <h2>my skills</h2>
-            <ProgressBar title="HTML5" percentage={90} />
-            <ProgressBar title="CSS3" percentage={90} />
-            <ProgressBar title="JavaScript" percentage={75} />
-            <ProgressBar title="React" percentage={70} />
-            <ProgressBar title="Vue.js" percentage={70} />
-            <ProgressBar title="D3" percentage={50} />
-            <ProgressBar title="Git" percentage={50} />
-            <ProgressBar title="React Native" percentage={40} />
-          </section>
-          <section
-            css={`
-              margin-top: 30px;
-            `}
-          >
-            <h2>contact me</h2>
-            <Contacts>
-              <IconContext.Provider value={{ color: "white", size: 32 }}>
-                <Link
-                  href="https://www.linkedin.com/in/artemagvanian/"
-                  target="__blank"
-                >
-                  <FaLinkedin />
-                </Link>
-                <Link href="https://github.com/artemagvanian" target="__blank">
-                  <FaGithub />
-                </Link>
-                <Link href="mailto:artemagvanian@icloud.com" target="__blank">
-                  <FaEnvelope />
-                </Link>
-              </IconContext.Provider>
-            </Contacts>
-          </section>
-        </div>
+        <section>
+          <h2>contact me</h2>
+          <Contacts>
+            <IconContext.Provider value={{ color: "white", size: 32 }}>
+              <Link
+                href="https://www.linkedin.com/in/artemagvanian/"
+                target="__blank"
+              >
+                <FaLinkedin />
+              </Link>
+              <Link href="https://github.com/artemagvanian" target="__blank">
+                <FaGithub />
+              </Link>
+              <Link href="mailto:artemagvanian@icloud.com" target="__blank">
+                <FaEnvelope />
+              </Link>
+            </IconContext.Provider>
+          </Contacts>
+        </section>
       </Container>
       <BackgroundCanvas />
     </Layout>

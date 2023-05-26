@@ -61,12 +61,11 @@ const IndexPage = () => (
     <SEO title="Home" />
     <Section>
       <Heading>
-        Hi! I am <Accent>Artem</Accent>
-        <br />I am a front-end web developer
+        <Accent>Artem Agvanian</Accent>
+        <br />Undergraduate Student and Researcher
       </Heading>
       <Container>
         <SiteLink to="/about">about me</SiteLink>
-        <SiteLink to="/portfolio">my work</SiteLink>
       </Container>
     </Section>
     <BackgroundCanvas />
